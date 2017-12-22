@@ -1,0 +1,101 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SIGN UP</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding style="margin-top:50px">
+  <ion-list>
+    <form novalidate [formGroup]="user">
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="userData.username" formControlName="username"></ion-input>
+      </ion-item>
+
+      <ion-item  no-lines *ngIf="( user.get('username').hasError('minlength') || user.get('username').hasError('required') ) && user.get('username').touched">
+        <ion-label class="error" *ngIf="user.get('username').hasError('required') && user.get('username').touched">
+          Name is required
+        </ion-label>
+        <ion-label class="error" *ngIf="user.get('username').hasError('minlength') && user.get('username').touched">
+          Minimum of 4 characters
+        </ion-label>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="userData.password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <ion-item no-lines *ngIf="( user.get('password').hasError('minlength') || user.get('password').hasError('required') ) && user.get('password').touched">
+        <div class="error" *ngIf="user.get('password').hasError('required') && user.get('password').touched">
+          password is required
+        </div>
+        <div class="error" *ngIf="user.get('password').hasError('minlength') && user.get('password').touched">
+          at least 5
+        </div>
+      </ion-item>
+
+
+
+
+      <ion-item>
+        <ion-label floating> Confirm Password</ion-label>
+        <ion-input type="password" [(ngModel)]="userData.confpassword" formControlName="confpassword"></ion-input>
+      </ion-item>
+
+      <ion-item no-lines *ngIf="( user.get('confpassword').hasError('minlength') || user.get('confpassword').hasError('required') ) && user.get('confpassword').touched">
+        <div class="error" *ngIf="user.get('confpassword').hasError('required') && user.get('confpassword').touched">
+          conf password is required
+        </div>
+        <div class="error" *ngIf="user.get('confpassword').hasError('minlength') && user.get('confpassword').touched">
+          at least 5
+        </div>
+      </ion-item>
+
+
+      
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="userData.email" formControlName="email"></ion-input>
+      </ion-item>
+
+
+      <ion-item no-lines *ngIf="( user.get('email').hasError('required') || user.get('email').hasError('email') ) && user.get('email').touched">
+        <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
+          email is required
+        </div>
+        <div class="error" *ngIf="user.get('email').hasError('email') && user.get('email').touched">
+          Please enter valid email
+        </div>
+      </ion-item>
+
+
+
+      <!-- <ion-item>
+        <ion-label stacked>Product ID</ion-label>
+        <ion-input type="number" [(ngModel)]="userData.phone"></ion-input>
+      </ion-item> -->
+
+
+
+      <button ion-button block style="margin-top:50px" (click)="signup()" [disabled]="user.invalid">Sign up</button>
+
+    </form>
+
+  </ion-list>
+</ion-content>
+
+<style type="text/css">
+  .error {
+    color: red;
+    text-align: center;
+    font-size: 10px;
+  }
+</style>

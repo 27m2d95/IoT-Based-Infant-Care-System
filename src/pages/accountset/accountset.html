@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Account Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-icon name="person" style="float:left"></ion-icon>
+      <h2 style="float:left"> &nbsp; Username:</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <h1 style="text-align:center" *ngFor="let item of dataSet">{{item.user_name}}</h1>
+      <button ion-button  color="danger" outline style="float:right" (click)="deleteaccount()">Delete Acc</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="margin-top:20px">
+    <ion-card-header>
+      <ion-icon name="mail" style="float:left"></ion-icon>
+      <h2 style="float:left"> &nbsp; Email:</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <h1 style="text-align:center" *ngFor="let item of dataSet"> {{item.user_email}}</h1>
+      <button ion-button outline style="float:right" (click)="updateemail()">Update</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="margin-top:20px">
+    <ion-card-header>
+      <ion-icon name="lock" style="float:left"></ion-icon>
+      <h2 style="float:left"> &nbsp; Password:</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <h1 style="text-align:center" *ngFor="let item of dataSet">{{item.user_password}}</h1>
+      <button ion-button outline style="float:right" (click)="updatepassword()">Update</button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

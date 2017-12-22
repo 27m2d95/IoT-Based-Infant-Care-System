@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="text-align:center">Illness Care</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="medicinedata.id != '' && medicinedata.cradle != 'not assigned' ">
+
+
+  <ion-item>
+    <ion-label>Medicine Name</ion-label>
+    <ion-input type="text" [(ngModel)]="medicinedata.medicine_name"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Total ml</ion-label>
+    <ion-input type="number" min=0 [(ngModel)]="medicinedata.total_ML"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Dosage ml</ion-label>
+    <ion-input type="number" min=0 [(ngModel)]="medicinedata.dose_ML"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Morning</ion-label>
+    <ion-toggle [(ngModel)]="medicinedata.morning"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Afternoon</ion-label>
+    <ion-toggle [(ngModel)]="medicinedata.afternoon"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Evening</ion-label>
+    <ion-toggle [(ngModel)]="medicinedata.evening"></ion-toggle>
+  </ion-item>
+
+  <button ion-button (click)="addMedicine()">Add</button>
+  <button ion-button>Check</button>
+
+</ion-content>
+
+
+<ion-content padding *ngIf="medicinedata.id == '' ">
+  <h1>Choose an infnat</h1>
+</ion-content>
+
+<ion-content padding *ngIf="medicinedata.cradle == 'not assigned' ">
+  <h1>No Assigned</h1>
+</ion-content>

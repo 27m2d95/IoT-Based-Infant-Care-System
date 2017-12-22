@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="text-align:center">Health Status</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card class="heart">
+    <ion-card-header>
+      Heart Rate
+    </ion-card-header>
+    <ion-card-content *ngFor="let item of heartrateData">
+      <h1 *ngIf="heartrateData != ''"> {{item.heart_rate}} 
+        <ion-icon name="heart" style="color:red"><sub>bpm</sub></ion-icon>
+      </h1>
+    </ion-card-content>
+
+    <ion-card-content>
+        <h1 *ngIf="heartrateData == ''">
+          <ion-icon name="heart"></ion-icon>
+        </h1>
+      </ion-card-content>
+  </ion-card>
+
+
+  <ion-card class="temp">
+    <ion-card-header>
+      Temperature
+    </ion-card-header>
+    <ion-card-content *ngFor="let item of temperatureData">
+      <h1 *ngIf="temperatureData != ''">{{item.temp_degree}}
+        <ion-icon name="thermometer" style="color:blue"><sub> &#8451;</sub></ion-icon>
+      </h1>
+    </ion-card-content>
+
+    <ion-card-content>
+      <h1 *ngIf="temperatureData == ''"> 
+        <ion-icon name="thermometer"></ion-icon>
+      </h1>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="sleeppattern">
+    <ion-card-header>
+      Sleep Pattern
+    </ion-card-header>
+    <ion-card-content>
+      {{infantinfo2.name}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

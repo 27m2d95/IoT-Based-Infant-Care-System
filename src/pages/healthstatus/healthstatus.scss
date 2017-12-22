@@ -1,0 +1,31 @@
+page-healthstatus {
+
+    .heart{
+        width: 150px;
+        height: 150px;
+        border: 3px solid lightgreen;
+        text-align: center;
+        border-radius: 100%;
+        margin-left:70px;
+        padding-top:5%;
+        //float: left;
+    }
+
+    .temp{
+        width: 150px;
+        height: 150px;
+        border: 3px solid lightgreen;
+        text-align: center;
+        border-radius: 100%;
+        margin-left:70px;
+        padding-top:5%;
+        //float: right;
+    }
+
+    .sleeppattern{
+        height: 30%;
+
+    }
+
+
+}

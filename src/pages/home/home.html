@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align:center">Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header style="text-align:center" *ngIf="infantinfo1.id != ''">
+      <ion-icon name="person"> {{ infantinfo1.name}} </ion-icon>
+      <br>
+      <ion-icon name="calendar"> {{infantinfo1.age}} </ion-icon>
+      <br>
+      <ion-icon name="cart"> {{infantinfo1.cradle}} </ion-icon>
+      <br>
+      <ion-item style="width:100%; float:left">
+        <ion-label>Cradle</ion-label>
+        <ion-select interface="action-sheet" [(ngModel)]="infantname1" style="text-align:left">
+          <ion-option (ionSelect)="selectedcradle()" *ngFor="let item of dataSet1">{{item.product_ID}}</ion-option>
+          <ion-option (ionSelect)="addcradle()"> Add Product</ion-option>
+        </ion-select>
+      </ion-item>
+      
+    </ion-card-header>
+
+
+    <ion-card-content>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/imgs/download.jpg" />
+    <ion-card-content>
+      <ion-card-title style="text-align:center">
+        Isitter, The Peace Of Mind
+      </ion-card-title>
+      <p>
+        Please Visit Our Web Page For More Info
+        <a href="https://www.google.com"> here</a>
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
